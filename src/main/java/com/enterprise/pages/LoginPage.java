@@ -10,7 +10,6 @@ public class LoginPage extends BasePage {
     private final By passwordField = By.id("password");
     private final By loginButton   = By.id("login-button");
     private final By errorMessage  = By.cssSelector("[data-test='error']");
-
     // 2. Page Actions
     public void navigateToLoginPage() {
         com.enterprise.driver.DriverManager.getDriver().get(ConfigReader.getProperty("url"));
@@ -27,7 +26,6 @@ public class LoginPage extends BasePage {
     public void clickLogin() {
         click(loginButton);
     }
-
     public String getErrorMessage() {
         return getText(errorMessage);
     }

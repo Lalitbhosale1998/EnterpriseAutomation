@@ -10,6 +10,7 @@ import org.testng.annotations.DataProvider;
                 "com.enterprise.stepdefinitions",
                 "com.enterprise.hooks"
         },
+        tags = "@datadriven",
         plugin = {
                 "pretty",
                 "html:target/cucumber-reports/cucumber.html",

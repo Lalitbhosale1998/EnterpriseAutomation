@@ -7,6 +7,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public final class DriverFactory {
 
     private DriverFactory() {
@@ -43,6 +46,12 @@ public final class DriverFactory {
                     }
                     chromeOptions.addArguments("--start-maximized");
                     chromeOptions.addArguments("--disable-notifications");
+                    // 🛡️ Disable Chrome Password Leak Detection & Password Manager Popups
+                    Map<String, Object> prefs = new HashMap<>();
+                    prefs.put("profile.password_manager_leak_detection", false);
+                    prefs.put("credentials_enable_service", false);
+                    prefs.put("profile.password_manager_enabled", false);
+                    chromeOptions.setExperimentalOption("prefs", prefs);
                     driver = new ChromeDriver(chromeOptions);
                     break;
             }

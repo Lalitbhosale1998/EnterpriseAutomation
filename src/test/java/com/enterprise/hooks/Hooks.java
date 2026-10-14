@@ -31,12 +31,18 @@ public class Hooks {
             } else {
                 scenario.attach(screenshot, "image/png", "Passed Step Screenshot");
             }
+            try {
+                Thread.sleep(1500);
+            }catch (InterruptedException ignored) {}
         }
     }
 
     @After
     public void tearDown() {
         // Closes browser and removes the ThreadLocal reference
+        try {
+            Thread.sleep(2000);
+        }catch (InterruptedException ignored) {}
         DriverManager.quitDriver();
     }
 }

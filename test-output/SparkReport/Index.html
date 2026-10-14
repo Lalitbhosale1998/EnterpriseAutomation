@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Oct 14, 2026 07:37:34 PM</span></a>
+<a href="#"><span class="badge badge-primary">Oct 14, 2026 09:21:08 PM</span></a>
 </li>
 </ul>
 </div>
@@ -45,6 +45,11 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('category-view')">
@@ -71,7 +76,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="skip" href="#"><span>Skip</span><span class="status warning"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -79,31 +84,31 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@regression</a><a class="dropdown-item" href="#">@negative</a><a class="dropdown-item" href="#">@smoke</a><a class="dropdown-item" href="#">@positive</a>
+<a class="dropdown-item" href="#">@datadriven</a>
 </ul>
 </li>
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="skip" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">User Login Functionality</p>
             <p class="text-sm">
-              <span>7:37:34 PM</span> / <span>00:00:06:976</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>9:21:09 PM</span> / <span>00:00:28:462</span>
+              <span class="badge skip-bg log float-right">Skip</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">User Login Functionality</h5>
-<span class='badge badge-success'>10.14.2026 7:37:34 PM</span>
-<span class='badge badge-danger'>10.14.2026 7:37:41 PM</span>
-<span class='badge badge-default'>00:00:06:976</span>
+<h5 class="test-status text-skip">User Login Functionality</h5>
+<span class='badge badge-success'>10.14.2026 9:21:09 PM</span>
+<span class='badge badge-danger'>10.14.2026 9:21:37 PM</span>
+<span class='badge badge-default'>00:00:28:462</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -115,189 +120,235 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Successful login with valid credentials</div>
+        <div class="node" id="2"><span class="badge log skip-bg mr-2">Skip</span>Login  <TestCaseName></div>
           <div class="status-avatar float-right mr-4">
             <i class="fa fa-paperclip"></i>
           </div>
       </div>
     </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="com.enterprise.stepdefinitions.LoginSteps.userIsOnLoginPage()">
-                <span>Given the user is on the login page</span>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="3"><span class="badge log skip-bg mr-2">Skip</span>Login  ValidLoginTest</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the login page</span>
       <div>
       </div>
-              </div>
-              <div class="step pass-bg" title="AFTER_STEP">
-                <span>com.enterprise.hooks.Hooks.captureStepScreenshot(io.cucumber.java.Scenario)</span>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>com.enterprise.hooks.Hooks.captureStepScreenshot(io.cucumber.java.Scenario)</span>
       <div>Passed Step Screenshot
           <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='test-output/embedded1.png' src="test-output/embedded1.png">
+<img data-featherlight='./embedded1.png' src="./embedded1.png">
     
     </div></div>
 </div>
       <div>
       </div>
-              </div>
-              <div class="step pass-bg" title="com.enterprise.stepdefinitions.LoginSteps.userEntersValidCredentials(java.lang.String,java.lang.String)">
-                <span>When the user enters valid username "standard_user" and password "secret_sauce"</span>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>When the user logs in using test data from sheet "LoginData" for case "ValidLoginTest"</span>
       <div>
+        <textarea disabled class="code-block">org.testng.SkipException: Test case 'ValidLoginTest' is marked 'N' in Excel. Skipping execution!
+	at com.enterprise.stepdefinitions.LoginSteps.loginUsingExcelData(LoginSteps.java:60)
+	at ✽.the user logs in using test data from sheet "LoginData" for case "ValidLoginTest"(file:///D:/Automation/EnterpriseAutomation/src/test/resources/features/Login.feature:22)
+</textarea>
+      
       </div>
-              </div>
-              <div class="step pass-bg" title="AFTER_STEP">
-                <span>com.enterprise.hooks.Hooks.captureStepScreenshot(io.cucumber.java.Scenario)</span>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>com.enterprise.hooks.Hooks.captureStepScreenshot(io.cucumber.java.Scenario)</span>
       <div>Passed Step Screenshot
           <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='test-output/embedded2.png' src="test-output/embedded2.png">
+<img data-featherlight='./embedded2.png' src="./embedded2.png">
     
     </div></div>
 </div>
       <div>
       </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>Then the login result should match expected test data from sheet "LoginData" for case "ValidLoginTest"</span>
+      <div>Step skipped
+      </div>
+                  </div>
               </div>
-              <div class="step pass-bg" title="com.enterprise.stepdefinitions.LoginSteps.clicksLoginButton()">
-                <span>And clicks the login button</span>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="12"><span class="badge log skip-bg mr-2">Skip</span>Login  LockedUserTest</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the login page</span>
       <div>
       </div>
-              </div>
-              <div class="step pass-bg" title="AFTER_STEP">
-                <span>com.enterprise.hooks.Hooks.captureStepScreenshot(io.cucumber.java.Scenario)</span>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>com.enterprise.hooks.Hooks.captureStepScreenshot(io.cucumber.java.Scenario)</span>
       <div>Passed Step Screenshot
           <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='test-output/embedded3.png' src="test-output/embedded3.png">
+<img data-featherlight='./embedded3.png' src="./embedded3.png">
     
     </div></div>
 </div>
       <div>
       </div>
-              </div>
-              <div class="step pass-bg" title="com.enterprise.stepdefinitions.LoginSteps.userRedirectedToDashboard()">
-                <span>Then the user should be redirected to the dashboard</span>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>When the user logs in using test data from sheet "LoginData" for case "LockedUserTest"</span>
       <div>
+        <textarea disabled class="code-block">org.testng.SkipException: Test case 'LockedUserTest' is marked 'N' in Excel. Skipping execution!
+	at com.enterprise.stepdefinitions.LoginSteps.loginUsingExcelData(LoginSteps.java:60)
+	at ✽.the user logs in using test data from sheet "LoginData" for case "LockedUserTest"(file:///D:/Automation/EnterpriseAutomation/src/test/resources/features/Login.feature:22)
+</textarea>
+      
       </div>
-              </div>
-              <div class="step pass-bg" title="AFTER_STEP">
-                <span>com.enterprise.hooks.Hooks.captureStepScreenshot(io.cucumber.java.Scenario)</span>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>com.enterprise.hooks.Hooks.captureStepScreenshot(io.cucumber.java.Scenario)</span>
       <div>Passed Step Screenshot
           <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='test-output/embedded4.png' src="test-output/embedded4.png">
+<img data-featherlight='./embedded4.png' src="./embedded4.png">
     
     </div></div>
 </div>
       <div>
       </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>Then the login result should match expected test data from sheet "LoginData" for case "LockedUserTest"</span>
+      <div>Step skipped
+      </div>
+                  </div>
               </div>
-              <div class="step pass-bg" title="com.enterprise.stepdefinitions.LoginSteps.headerTitleShouldDisplay(java.lang.String)">
-                <span>And the header title should display "Products"</span>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="21"><span class="badge log skip-bg mr-2">Skip</span>Login  InvalidPasswordTest</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the login page</span>
       <div>
       </div>
-              </div>
-              <div class="step pass-bg" title="AFTER_STEP">
-                <span>com.enterprise.hooks.Hooks.captureStepScreenshot(io.cucumber.java.Scenario)</span>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>com.enterprise.hooks.Hooks.captureStepScreenshot(io.cucumber.java.Scenario)</span>
       <div>Passed Step Screenshot
           <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='test-output/embedded5.png' src="test-output/embedded5.png">
+<img data-featherlight='./embedded5.png' src="./embedded5.png">
     
     </div></div>
 </div>
       <div>
       </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="15"><span class="badge log pass-bg mr-2">Pass</span>Unsuccessful login with invalid credentials</div>
-          <div class="status-avatar float-right mr-4">
-            <i class="fa fa-paperclip"></i>
-          </div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="com.enterprise.stepdefinitions.LoginSteps.userIsOnLoginPage()">
-                <span>Given the user is on the login page</span>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>When the user logs in using test data from sheet "LoginData" for case "InvalidPasswordTest"</span>
       <div>
+        <textarea disabled class="code-block">org.testng.SkipException: Test case 'InvalidPasswordTest' is marked 'N' in Excel. Skipping execution!
+	at com.enterprise.stepdefinitions.LoginSteps.loginUsingExcelData(LoginSteps.java:60)
+	at ✽.the user logs in using test data from sheet "LoginData" for case "InvalidPasswordTest"(file:///D:/Automation/EnterpriseAutomation/src/test/resources/features/Login.feature:22)
+</textarea>
+      
       </div>
-              </div>
-              <div class="step pass-bg" title="AFTER_STEP">
-                <span>com.enterprise.hooks.Hooks.captureStepScreenshot(io.cucumber.java.Scenario)</span>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>com.enterprise.hooks.Hooks.captureStepScreenshot(io.cucumber.java.Scenario)</span>
       <div>Passed Step Screenshot
           <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='test-output/embedded6.png' src="test-output/embedded6.png">
+<img data-featherlight='./embedded6.png' src="./embedded6.png">
     
     </div></div>
 </div>
       <div>
       </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>Then the login result should match expected test data from sheet "LoginData" for case "InvalidPasswordTest"</span>
+      <div>Step skipped
+      </div>
+                  </div>
               </div>
-              <div class="step pass-bg" title="com.enterprise.stepdefinitions.LoginSteps.userEntersInvalidCredentials(java.lang.String,java.lang.String)">
-                <span>When the user enters invalid username "locked_out_user" and password "wrong_password"</span>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="30"><span class="badge log pass-bg mr-2">Pass</span>Login  ValidLoginTest_All_Items</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the login page</span>
       <div>
       </div>
-              </div>
-              <div class="step pass-bg" title="AFTER_STEP">
-                <span>com.enterprise.hooks.Hooks.captureStepScreenshot(io.cucumber.java.Scenario)</span>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>com.enterprise.hooks.Hooks.captureStepScreenshot(io.cucumber.java.Scenario)</span>
       <div>Passed Step Screenshot
           <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='test-output/embedded7.png' src="test-output/embedded7.png">
+<img data-featherlight='./embedded7.png' src="./embedded7.png">
     
     </div></div>
 </div>
       <div>
       </div>
-              </div>
-              <div class="step pass-bg" title="com.enterprise.stepdefinitions.LoginSteps.clicksLoginButton()">
-                <span>And clicks the login button</span>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user logs in using test data from sheet "LoginData" for case "ValidLoginTest_All_Items"</span>
       <div>
       </div>
-              </div>
-              <div class="step pass-bg" title="AFTER_STEP">
-                <span>com.enterprise.hooks.Hooks.captureStepScreenshot(io.cucumber.java.Scenario)</span>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>com.enterprise.hooks.Hooks.captureStepScreenshot(io.cucumber.java.Scenario)</span>
       <div>Passed Step Screenshot
           <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='test-output/embedded8.png' src="test-output/embedded8.png">
+<img data-featherlight='./embedded8.png' src="./embedded8.png">
     
     </div></div>
 </div>
       <div>
       </div>
-              </div>
-              <div class="step pass-bg" title="com.enterprise.stepdefinitions.LoginSteps.errorMessageShouldContain(java.lang.String)">
-                <span>Then an error message should contain "Username and password do not match"</span>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the login result should match expected test data from sheet "LoginData" for case "ValidLoginTest_All_Items"</span>
       <div>
       </div>
-              </div>
-              <div class="step pass-bg" title="AFTER_STEP">
-                <span>com.enterprise.hooks.Hooks.captureStepScreenshot(io.cucumber.java.Scenario)</span>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>com.enterprise.hooks.Hooks.captureStepScreenshot(io.cucumber.java.Scenario)</span>
       <div>Passed Step Screenshot
           <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='test-output/embedded9.png' src="test-output/embedded9.png">
+<img data-featherlight='./embedded9.png' src="./embedded9.png">
     
     </div></div>
 </div>
       <div>
       </div>
+                  </div>
               </div>
-              <div class="step pass-bg" title="com.enterprise.stepdefinitions.LoginSteps.userShouldRemainOnLoginPage()">
-                <span>And the user should remain on the login page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="AFTER_STEP">
-                <span>com.enterprise.hooks.Hooks.captureStepScreenshot(io.cucumber.java.Scenario)</span>
-      <div>Passed Step Screenshot
-          <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='test-output/embedded10.png' src="test-output/embedded10.png">
-    
-    </div></div>
-</div>
-      <div>
-      </div>
-              </div>
-          </div>
+            </div>
         </div>
   </div>
 </div>
@@ -312,11 +363,83 @@
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="test-wrapper row view category-view attributes-view">
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-skip'>3</span>
+</span>
+<p class="name">org.testng.SkipException</p>
+<p class="duration text-sm">3 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.testng.SkipException</h4>
+<span status="skip" class='badge log badge-skip'>3 skipped</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>21:21:12 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='7'>When the user logs in using test data from sheet "LoginData" for case "ValidLoginTest"</a>
+<div class="">
+<span class="badge badge-default">User Login Functionality.Login ValidLoginTest.When the user logs in using test data from sheet "LoginData" for case "ValidLoginTest"</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>21:21:18 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='16'>When the user logs in using test data from sheet "LoginData" for case "LockedUserTest"</a>
+<div class="">
+<span class="badge badge-default">User Login Functionality.Login LockedUserTest.When the user logs in using test data from sheet "LoginData" for case "LockedUserTest"</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>21:21:25 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='25'>When the user logs in using test data from sheet "LoginData" for case "InvalidPasswordTest"</a>
+<div class="">
+<span class="badge badge-default">User Login Functionality.Login InvalidPasswordTest.When the user logs in using test data from sheet "LoginData" for case "InvalidPasswordTest"</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view category-view attributes-view">
 <div class="test-list">
 <div class="test-list-tools">
 <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">4</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
 <ul class="test-list-item">
@@ -324,14 +447,16 @@
 <div class="test-detail">
 <span class="meta">
 <span class='badge log pass-bg'>1</span>
+<span class='badge log badge-skip'>3</span>
 </span>
-<p class="name">@regression</p>
-<p class="duration text-sm">1 tests</p>
+<p class="name">@datadriven</p>
+<p class="duration text-sm">4 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@regression</h4>
+<h4>@datadriven</h4>
 <span status="pass" class='badge log pass-bg'>1 passed</span>
+<span status="skip" class='badge log badge-skip'>3 skipped</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -342,121 +467,43 @@
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>19:37:40 PM</td>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>21:21:09 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='15'>Unsuccessful login with invalid credentials</a>
+<a href="#" class="linked" test-id='1' id='3'>Login ValidLoginTest</a>
 <div class="">
-<span class="badge badge-default">User Login Functionality.Unsuccessful login with invalid credentials</span>
+<span class="badge badge-default">User Login Functionality.Login ValidLoginTest</span>
 </div>
 </td>
 </tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log pass-bg'>1</span>
-</span>
-<p class="name">@negative</p>
-<p class="duration text-sm">1 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>@negative</h4>
-<span status="pass" class='badge log pass-bg'>1 passed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>19:37:40 PM</td>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>21:21:16 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='15'>Unsuccessful login with invalid credentials</a>
+<a href="#" class="linked" test-id='1' id='12'>Login LockedUserTest</a>
 <div class="">
-<span class="badge badge-default">User Login Functionality.Unsuccessful login with invalid credentials</span>
+<span class="badge badge-default">User Login Functionality.Login LockedUserTest</span>
 </div>
 </td>
 </tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log pass-bg'>1</span>
-</span>
-<p class="name">@smoke</p>
-<p class="duration text-sm">1 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>@smoke</h4>
-<span status="pass" class='badge log pass-bg'>1 passed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>19:37:34 PM</td>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>21:21:22 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='2'>Successful login with valid credentials</a>
+<a href="#" class="linked" test-id='1' id='21'>Login InvalidPasswordTest</a>
 <div class="">
-<span class="badge badge-default">User Login Functionality.Successful login with valid credentials</span>
+<span class="badge badge-default">User Login Functionality.Login InvalidPasswordTest</span>
 </div>
 </td>
 </tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log pass-bg'>1</span>
-</span>
-<p class="name">@positive</p>
-<p class="duration text-sm">1 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>@positive</h4>
-<span status="pass" class='badge log pass-bg'>1 passed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>19:37:34 PM</td>
+<td>21:21:29 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='2'>Successful login with valid credentials</a>
+<a href="#" class="linked" test-id='1' id='30'>Login ValidLoginTest_All_Items</a>
 <div class="">
-<span class="badge badge-default">User Login Functionality.Successful login with valid credentials</span>
+<span class="badge badge-default">User Login Functionality.Login ValidLoginTest_All_Items</span>
 </div>
 </td>
 </tr>
@@ -477,19 +524,19 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Oct 14, 2026 07:37:34 PM</h3>
+<h3>Oct 14, 2026 09:21:08 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Oct 14, 2026 07:37:41 PM</h3>
+<h3>Oct 14, 2026 09:21:37 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Features Passed</p>
-<h3>1</h3>
+<h3>0</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -511,13 +558,13 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>1</b> features passed
+<div><small data-tooltip='0%'>
+<b>0</b> features passed
 </small>
 </div>
 <div>
 <small data-tooltip='0%'><b>0</b> features failed,
-<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+<b>1</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
 </div>
@@ -534,10 +581,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>2</b> scenarios passed</small></div>
+<div><small data-tooltip='25%'><b>1</b> scenarios passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> scenarios failed,
-<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+<b>3</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -554,10 +601,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>20</b> steps passed</small></div>
+<div><small data-tooltip='71%'><b>15</b> steps passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> steps failed,
-<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+<b>6</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -573,7 +620,7 @@
 </div></div>
 <script>
 var timeline = {
-"User Login Functionality":6.976
+"User Login Functionality":28.462
 };
 </script>
 <div class="row">
@@ -583,36 +630,12 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@regression</td>
+<td>@datadriven</td>
 <td>1</td>
 <td>0</td>
+<td>3</td>
 <td>0</td>
-<td>0</td>
-<td>100%</td>
-</tr>
-<tr>
-<td>@negative</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
-</tr>
-<tr>
-<td>@smoke</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
-</tr>
-<tr>
-<td>@positive</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
+<td>25%</td>
 </tr>
 </tbody>
 </table></div>
@@ -623,21 +646,21 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 1,
+passParent: 0,
 failParent: 0,
 warningParent: 0,
-skipParent: 0,
+skipParent: 1,
 childCount: 5,
-passChild: 2,
+passChild: 1,
 failChild: 0,
 warningChild: 0,
-skipChild: 0,
+skipChild: 3,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 20,
+passGrandChild: 15,
 failGrandChild: 0,
 warningGrandChild: 0,
-skipGrandChild: 0,
+skipGrandChild: 6,
 infoGrandChild: 0,
 eventsCount: 5,
 };
