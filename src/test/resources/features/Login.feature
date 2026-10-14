@@ -28,6 +28,7 @@ Feature: User Login Functionality
       | LockedUserTest      |
       | InvalidPasswordTest |
       | ValidLoginTest_All_Items  |
+      | ValidLoginTest_About  |
 
   @products
   Scenario: Retrieve and verify all products on dashboard

@@ -16,6 +16,7 @@ public class DashboardPage extends BasePage {
     private final By productTitles = By.className("inventory_item_name");
     private final By hamburgerMenuButton   = By.id("react-burger-menu-btn");
     private final By allItemsLink = By.id("inventory_sidebar_link");
+    private final By aboutLink = By.id("about_sidebar_link");
 
     public boolean isDashboardDisplayed() {
         return isDisplayed(headerTitle) && isDisplayed(appLogo);
@@ -26,6 +27,13 @@ public class DashboardPage extends BasePage {
     }
     public void clickHamburgerMenuButton() {
         click(hamburgerMenuButton);
+    }
+    public void clickaboutLink() {
+        click(aboutLink);
+    }
+    public boolean isAboutPageLoaded() {
+        // Waits until the browser redirects to the official Sauce Labs website
+        return wait.until(driver -> driver.getCurrentUrl().contains("saucelabs.com"));
     }
     public boolean isAllItemsOptionDisplayed(){
         return isDisplayed(allItemsLink);

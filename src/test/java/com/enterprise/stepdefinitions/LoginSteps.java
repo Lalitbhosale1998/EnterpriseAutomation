@@ -73,6 +73,10 @@ public class LoginSteps {
         if (expected.equalsIgnoreCase("Menu")) {
             dashboardPage.clickHamburgerMenuButton();
             Assert.assertTrue(dashboardPage.isAllItemsOptionDisplayed(), "Side menu is not displayed!");
+        } else if (expected.equalsIgnoreCase("About page")) {
+            dashboardPage.clickHamburgerMenuButton();
+            dashboardPage.clickaboutLink();
+            Assert.assertTrue(dashboardPage.isAboutPageLoaded(), "Sauce Labs About page was not loaded!");
         }
         else if (dashboardPage.isDashboardDisplayed()) {
             Assert.assertEquals(dashboardPage.getHeaderTitle(), expected);
